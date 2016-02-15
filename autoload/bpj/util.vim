@@ -76,7 +76,6 @@ endfun " 1}}}
 " like #splitlist but returns a dict with pairs separated by :
 fun! bpj#util#splitdict(string) "{{{1
     let dict = {}
-    let [ pattern, replacement ] = s:dict
     call substitute(a:string, s:dict[0], s:dict[1], 'g')
     return dict
 endfun " 1}}}
