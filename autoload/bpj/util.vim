@@ -60,7 +60,7 @@ endfun " 1}}}
 
 " return a list with the unique values in list
 fun! bpj#util#uniq(list) "{{{1
-    return filter(copy(a:list), 'index(list, v:val, v:key+1)==-1')
+    return filter(copy(a:list), 'index(a:list, v:val, v:key+1)==-1')
 endfun " 1}}}
 
 " return a list with comma-separated substrings in string
