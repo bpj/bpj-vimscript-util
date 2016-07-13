@@ -74,7 +74,8 @@ endfun " 1}}}
 "   the second argument is used as separator instead of comma
 "   the third argument is used as escape char instead of backslash
 "   so #splitlist(s, ';', '!') would split a semicolon-separated, bang-escaped list
-"   Note that the extra arguments are regex fragments!
+"   Note that the extra arguments must be single characters
+"   (but [, ] and \ must be backslash-escaped)!
 "   Don't pass any more arguments than these!
 fun! bpj#util#splitlist(string,...) "{{{1
     let [pattern, expr, default] = s:list
@@ -90,10 +91,11 @@ endfun " 1}}}
 "   the second argument is used as item separator instead of comma
 "   the third argument is used as key--value separator instead of comma
 "   the fourth argument is used as escape char instead of backslash
-"   so #splitlist(s, ';', '\.', '!') would 
+"   so #splitlist(s, ';', '.', '!') would 
 "   split a semicolon-separated, bang-escaped list,
 "   with keys and values separated by periods
-"   Note that the extra arguments are regex fragments!
+"   Note that the extra arguments must be single characters
+"   (but [, ] and \ must be backslash-escaped)!
 "   Don't pass any more arguments than these!
 fun! bpj#util#splitdict(string,...) "{{{1
     let [pattern, expr, default] = s:dict
